@@ -1,0 +1,23 @@
+build/
+
+# Cmake
+
+_CPack_Packages/
+_deps/
+cmake_install.cmake
+CMakeCache.txt
+CmakeFiles/
+compile_commands.json
+CPackConfig.cmake
+CPackSourceConfig.cmake
+install_manifest.txt
+Makefile
+
+# clangd
+
+.cache/
+
+# Clion
+
+.idea/
+cmake-build-debug/

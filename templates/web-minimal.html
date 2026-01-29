@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Handcrank Engine Web Export</title>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" tabindex="-1"></canvas>
+    <script type="text/javascript">
+      var Module = {
+        canvas: (() => {
+          const canvas = document.getElementById('canvas');
+
+          canvas.addEventListener('contextmenu', (e) => e.preventDefault());
+
+          return canvas;
+        })(),
+      };
+    </script>
+    {{{ SCRIPT }}}
+  </body>
+</html>

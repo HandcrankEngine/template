@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: HandcrankEngine/install-emscripten-package@v0.1.0
+
+      - name: Build WebGL
+        run: |
+          source ./emsdk/emsdk_env.sh
+          ./bin/build-web.sh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v5
+        with:
+          path: ./build
+          overwrite: true

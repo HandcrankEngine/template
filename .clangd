@@ -1,0 +1,13 @@
+CompileFlags:
+  CompilationDatabase: .
+  Add:
+    - "-std=c++17"
+    - "-Ifonts"
+    - "-Iimages"
+    - "-Iinclude"
+    - "-Isrc"
+Diagnostics:
+  UnusedIncludes: Strict
+  ClangTidy:
+    Add: [performance-*, modernize-*, readability-*]
+    Remove: [readability-identifier-length]
